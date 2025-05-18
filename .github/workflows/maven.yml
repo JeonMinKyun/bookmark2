@@ -10,9 +10,6 @@ jobs:
   build-bookmark-api:
     name: Build bookmark-api
     runs-on: ubuntu-latest
-    defaults: 
-      run: 
-        working-directory: ./bookmark2
     steps:
       - uses: actions/checkout@v4
 
