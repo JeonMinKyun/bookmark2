@@ -15,8 +15,10 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
+import org.springframework.http.MediaType;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import com.min.edu.domain.Bookmark;
@@ -111,5 +113,27 @@ class BookmarkContollerTest {
 			.andExpect(jsonPath("$.hasNext", CoreMatchers.equalTo(hasNext)))
 			.andExpect(jsonPath("$.hasPrevious", CoreMatchers.equalTo(hasPrevious)));
 	}
+	
+	
+//	@Test
+//	public void shouldCreateBookmarkSuccessfully() throws Exception {
+//		MvcResult result = this.mvc.perform(MockMvcRequestBuilders.post("/api/bookmarks")
+//											.contentType(MediaType.APPLICATION_JSON)
+//											.content(""" 
+//													{"title":"Jeonmin Blog"}
+//													"""))
+//				.andExpect(status().is4xxClientError())
+//				.andExpect(jsonPath("$.field", CoreMatchers.is("url")))
+//				.andExpect(jsonPath("$.message", CoreMatchers.is("URL은 필수 입력 값입니다")))
+//				.andExpect(jsonPath("$.status", CoreMatchers.is(400)))
+//				.andReturn();
+//		String contentType = result.getResponse().getContentType();
+//		System.out.println("Content Type은 : " + contentType);
+//		
+//		String responseBody = result.getResponse().getContentAsString();
+//		System.out.println("Response JSON : " +  responseBody);
+//		
+//		
+//	}
 	
 }
